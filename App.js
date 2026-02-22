@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
@@ -10,6 +10,7 @@ import { IconoHeader } from './src/components/IconoHeader'
 
 import { Image, TouchableOpacity, Linking } from 'react-native';
 import logo from './src/assets/hoop.jpg';
+import { initializePushNotifications } from './src/services/pushNotifications'
 
 import {
   HorariosScreen, 
@@ -44,6 +45,21 @@ const options = {
 }
 export default function App({ navigation }) {
 
+  useEffect(() => {
+    let unsubscribeNotifications;
+
+    const setupPushNotifications = async () => {
+      unsubscribeNotifications = await initializePushNotifications();
+    };
+
+    setupPushNotifications();
+
+    return () => {
+      if (unsubscribeNotifications) {
+        unsubscribeNotifications();
+      }
+    };
+  }, []);
 
   Font.loadAsync({
     'open-sans-light': require('./assets/fonts/open-sans-light.ttf'),

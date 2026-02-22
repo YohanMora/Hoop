@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894450280937",
+    "project_id": "hoop-studios",
+    "storage_bucket": "hoop-studios.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894450280937:android:59df44fa16e8e91746c378",
+        "android_client_info": {
+          "package_name": "com.gymhoop.cr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFpBb-LM5bMhE1jsYzNu3apE3_gxTchLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
